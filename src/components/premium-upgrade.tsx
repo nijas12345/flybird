@@ -1,26 +1,21 @@
-import { CheckCircle, Crown, Star, Zap } from "lucide-react";
+import { CheckCircle, Crown, Star, Zap, MessageSquare, Users } from "lucide-react";
 
 export function PremiumUpgrade() {
-  const features = [
+  const premiumFeatures = [
     {
-      title: "Priority Application Submissions",
-      description: "Get your applications seen first by recruiters and hiring managers.",
-      icon: Zap,
-    },
-    {
-      title: "Advanced Job Matching",
-      description: "AI-powered job recommendations based on your skills and preferences.",
-      icon: Star,
-    },
-    {
-      title: "Unlimited Job Applications",
-      description: "Apply to as many jobs as you want without any monthly limits.",
+      title: "Unlimited Job Roles",
+      description: "List as many job roles as you need without any limits.",
       icon: CheckCircle,
     },
     {
-      title: "Resume Analytics",
-      description: "Get detailed insights on how your resume performs against job descriptions.",
-      icon: Crown,
+      title: "Chat with Employers and Users",
+      description: "Engage in real-time chats with potential employers and other users.",
+      icon: MessageSquare,
+    },
+    {
+      title: "Join Skill-Based Groups",
+      description: "Collaborate and connect with like-minded professionals in skill-based groups.",
+      icon: Users,
     },
   ];
 
@@ -31,11 +26,9 @@ export function PremiumUpgrade() {
       period: "per month",
       description: "Billed monthly, cancel anytime",
       features: [
-        "Priority Applications",
-        "Advanced Job Matching",
-        "Unlimited Applications",
-        "Resume Analytics",
-        "Email Support",
+        "Unlimited Job Roles",
+        "Chat with Employers and Users",
+        "Join Skill-Based Groups",
       ],
       popular: false,
     },
@@ -45,12 +38,9 @@ export function PremiumUpgrade() {
       period: "per month",
       description: "Billed annually, save 33%",
       features: [
-        "Priority Applications",
-        "Advanced Job Matching",
-        "Unlimited Applications",
-        "Resume Analytics",
-        "Priority Support",
-        "Career Coaching Session",
+        "Unlimited Job Roles",
+        "Chat with Employers and Users",
+        "Join Skill-Based Groups",
       ],
       popular: true,
     },
@@ -61,17 +51,21 @@ export function PremiumUpgrade() {
       <div className="border p-6 rounded-lg shadow-md text-center">
         <h2 className="text-3xl font-bold">Upgrade to Premium</h2>
         <p className="text-lg text-gray-600">Boost your job search with premium features</p>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
-          {features.map((feature) => (
-            <div key={feature.title} className="p-4 border rounded-lg text-center bg-gray-100">
-              <div className="p-3 rounded-full bg-blue-100 text-blue-600 inline-block">
-                <feature.icon className="h-6 w-6" />
+
+        {/* Premium Features Section */}
+        <div className="mt-8">
+          <h3 className="text-2xl font-bold text-center">Premium Features</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+            {premiumFeatures.map((feature) => (
+              <div key={feature.title} className="p-4 border rounded-lg text-center bg-gray-100">
+                <div className="p-3 rounded-full bg-blue-100 text-blue-600 inline-block">
+                  <feature.icon className="h-6 w-6" />
+                </div>
+                <h3 className="font-medium mt-2">{feature.title}</h3>
+                <p className="text-sm text-gray-500">{feature.description}</p>
               </div>
-              <h3 className="font-medium mt-2">{feature.title}</h3>
-              <p className="text-sm text-gray-500">{feature.description}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
@@ -113,5 +107,3 @@ export function PremiumUpgrade() {
     </div>
   );
 }
-
-
