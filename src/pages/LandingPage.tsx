@@ -68,19 +68,7 @@ export default function UserEntry() {
     }
 
     if (isLogin) {
-      // Handle login logic
-      const response = await fetch('/api/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ phoneNumber, password, userType })
-      })
-
-      if (response.ok) {
-        alert('Logged in successfully!')
-        navigate('/pages')
-      } else {
-        alert('Login failed. Please try again.')
-      }
+     navigate('/pages')
     } else {
       // Handle signup logic
 
@@ -162,7 +150,7 @@ export default function UserEntry() {
                       id="phoneNumber"
                       value={phoneNumber}
                       onChange={handlePhoneNumberChange}
-                      className="w-full p-2 border border-gray-300 rounded-md"
+                      className="w-full text-black p-2 border border-gray-300 rounded-md"
                       placeholder="Enter your phone number"
                       required
                     />
@@ -174,7 +162,7 @@ export default function UserEntry() {
                       id="password"
                       value={password}
                       onChange={handlePasswordChange}
-                      className="w-full p-2 border border-gray-300 rounded-md"
+                      className="w-full p-2 text-black border border-gray-300 rounded-md"
                       placeholder="Enter your password"
                       required
                     />
